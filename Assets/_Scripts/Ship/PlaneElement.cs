@@ -3,6 +3,8 @@ using System.Linq;
 
 public class PlaneElement : MonoBehaviour
 {
+    // Class manage modular elements of starship
+
     public Sprite actualSprite;
     public int actualNumber;
 

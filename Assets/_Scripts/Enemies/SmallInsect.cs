@@ -14,12 +14,4 @@ public class SmallInsect : Enemy
     {
         Move();
     }
-
-    private void Update()
-    {
-        if (gameObject.transform.position.y < -8)
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }
