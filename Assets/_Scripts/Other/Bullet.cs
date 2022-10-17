@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 5;
-
-    private float speed = 8;
+    private int damage;
+    private float speed;
     private void Start()
     {
-        
+        damage = GameManager.Instance.gameData.playerAttack;
+        speed = GameManager.Instance.gameData.bulletSpeed;
     }
 
     private void FixedUpdate()
     {
-        gameObject.transform.Translate(new Vector2(0, 1) * speed * Time.deltaTime);
+        gameObject.transform.Translate(new Vector2(0, 1) * speed *  Time.deltaTime);
     }
     
 

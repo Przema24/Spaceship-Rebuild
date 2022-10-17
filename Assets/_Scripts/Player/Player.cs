@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Bullet bullet;
-    public int hitPoints = 100;
+    //public int hitPoints = 100;
 
     private float speed = 3.5f;
     private bool isOnBound = false;
@@ -68,8 +68,8 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate<Bullet>(bullet, GetComponentsInChildren<PlaneElement>()[2].transform.position, Quaternion.identity);
-        Instantiate<Bullet>(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
+        Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[2].transform.position, Quaternion.identity);
+        Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
     }
 
     
