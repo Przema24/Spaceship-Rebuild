@@ -77,11 +77,6 @@ public class WaveManager : MonoBehaviour
 
     }
 
-    //public void RemoveInsectFromList(Enemy enemy)
-    //{
-    //    enemiesOnBoard.Remove(enemy);
-    //    Debug.Log(GameManager.Instance.gameData.playerGold);
-    //}
 
   
 }
