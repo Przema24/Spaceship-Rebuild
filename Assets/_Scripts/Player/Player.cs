@@ -3,10 +3,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Bullet bullet;
-    //public int hitPoints = 100;
+    public int hitPoints; 
 
-    private float speed = 3.5f;
+    private float speed;
     private bool isOnBound = false;
+
+    private void Start()
+    {
+        hitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
+        speed = GameManager.Instance.gameData.playerSpeed;
+    }
 
     private void Update()
     {
@@ -23,22 +29,22 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             MoveLeft();
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             MoveRight();
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             MoveUp();
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             MoveDown();
         }

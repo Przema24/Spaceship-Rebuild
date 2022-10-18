@@ -42,7 +42,6 @@ public class WaveManager : MonoBehaviour
         {
             timer = 1f;
             SpawnEnemy();
-            Debug.Log(enemiesOnBoard.Count);
         }
     }
 
@@ -58,7 +57,7 @@ public class WaveManager : MonoBehaviour
 
     private void EndStage()
     {
-        Debug.Log("end of wave");
+        // to do stage complete
     }
     
     private void SpawnEnemy()
@@ -72,7 +71,7 @@ public class WaveManager : MonoBehaviour
                         int randomIndex = Random.Range(0, 1);
                         randomPosition.x = Random.Range(-8, 8);
                         randomPosition.y = Random.Range(6, 8);
-                        enemiesOnBoard.Add(Instantiate<Enemy>(enemies[randomIndex], randomPosition, Quaternion.identity));
+                        enemiesOnBoard.Add(Instantiate(enemies[randomIndex], randomPosition, Quaternion.identity));
                         insectsRemain--;
                         waveStart = true;
                     }
@@ -84,7 +83,9 @@ public class WaveManager : MonoBehaviour
 
     public void RemoveInsectFromList(Enemy enemy)
     {
+        enemy.DropGold(enemy.gold);
         enemiesOnBoard.Remove(enemy);
+        Debug.Log(GameManager.Instance.gameData.playerGold);
     }
 
   

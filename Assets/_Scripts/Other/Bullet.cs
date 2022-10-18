@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    // Class for manage player projectile behaviour
+
     private int damage;
     private float speed;
     private void Start()

@@ -26,16 +26,25 @@ public class GameManager : MonoBehaviour
         CreateNewGameData();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("quit");
+            Application.Quit();
+        }
+    }
+
     private void CreateNewGameData()
     {
         gameData.lives = 3;
-        gameData.playerHitpoints = 100;
-        gameData.playerShield = 0;
+        gameData.maxPlayerHitpoints = 100;
+        gameData.maxPlayerShield = 0;
         gameData.playerAttack = 5;
         gameData.playerSpeed = 3.5f;
 
         gameData.bulletSpeed = 8;
-        gameData.gold = 30;
+        gameData.playerGold = 30;
         gameData.stage = 1;
     }
 }

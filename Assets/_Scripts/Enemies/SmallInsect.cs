@@ -7,7 +7,7 @@ public class SmallInsect : Enemy
         hitpoints = 20;
         damage = 5;
         speed = 2f;
-
+        gold = 2;
     }
 
     private void FixedUpdate()

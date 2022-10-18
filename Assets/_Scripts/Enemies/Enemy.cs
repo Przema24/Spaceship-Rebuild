@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     protected int hitpoints;
     protected int damage;
+    public int gold;
 
     protected float speed;
 
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject.transform.position.y < -8)
         {
+            // ondeath resolve in wavemanager class, when enemy dies
             if (OnDeath != null)
             {
                 OnDeath(this.gameObject.GetComponent<Enemy>());
@@ -45,12 +47,18 @@ public class Enemy : MonoBehaviour
 
         if (hitpoints <= 0)
         {
+            // ondeath resolve in wavemanager class, when enemy dies
             if (OnDeath != null)
             {
                 OnDeath(this.gameObject.GetComponent<Enemy>());
             }
             Destroy(gameObject);
         }
+    }
+
+    public virtual void DropGold(int gold)
+    {
+        GameManager.Instance.gameData.playerGold += gold;
     }
 
 }
