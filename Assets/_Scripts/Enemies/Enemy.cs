@@ -4,9 +4,6 @@ public class Enemy : MonoBehaviour
 {
     // Base class for enemy
 
-    public delegate void Death(Enemy enemy);
-    public static event Death OnDeath;
-
     protected WaveManager waveManager;
 
     protected int hitpoints;
@@ -17,21 +14,14 @@ public class Enemy : MonoBehaviour
 
     protected Vector2 moveDirection = new Vector2(0,-1);
 
-    private void Start()
-    {
-        waveManager = FindObjectOfType<WaveManager>();
-    }
+    
 
     private void Update()
     {
         if (gameObject.transform.position.y < -8)
         {
-            // ondeath resolve in wavemanager class, when enemy dies
-            if (OnDeath != null)
-            {
-                OnDeath(this.gameObject.GetComponent<Enemy>());
-            }
-            Destroy(this.gameObject);
+            waveManager.enemiesOnBoard--;
+            Death();
         }
     }
 
@@ -47,12 +37,10 @@ public class Enemy : MonoBehaviour
 
         if (hitpoints <= 0)
         {
-            // ondeath resolve in wavemanager class, when enemy dies
-            if (OnDeath != null)
-            {
-                OnDeath(this.gameObject.GetComponent<Enemy>());
-            }
-            Destroy(gameObject);
+            
+            DropGold(gold);
+            waveManager.enemiesOnBoard--;
+            Death();
         }
     }
 
@@ -60,5 +48,11 @@ public class Enemy : MonoBehaviour
     {
         GameManager.Instance.gameData.playerGold += gold;
     }
+
+    private void Death()
+    {
+        Destroy(gameObject);
+    }
+
 
 }

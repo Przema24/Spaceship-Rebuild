@@ -5,14 +5,16 @@ public class WaveManager : MonoBehaviour
 {
     // Class manage enemy waves, spawn insects, (to-do) load data from other script 
     public int stage;
-    public int insectsRemain;
+    public int enemiesRemainToEndOfWave;
 
-    private bool waveStart = false;
+    public int enemiesOnBoard = 0;
+
+    private bool waveEnd = false;
     private float timer;
     private Vector2 randomPosition = new Vector2(0,0);
 
     public Enemy[] enemies;
-    public List<Enemy> enemiesOnBoard;
+    
 
 
 
@@ -22,18 +24,17 @@ public class WaveManager : MonoBehaviour
         // TODO load data
 
         stage = 1;
-        insectsRemain = 20;
+        enemiesRemainToEndOfWave = 20;
 
         timer = 1f;
 
-        enemiesOnBoard = new List<Enemy>();
     }
 
     private void Update()
     {
         timer -= Time.deltaTime;
 
-        if (waveStart && enemiesOnBoard.Count <= 0)
+        if (waveEnd && enemiesOnBoard <= 0)
         {
             EndStage();
         }
@@ -45,19 +46,9 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        Enemy.OnDeath += RemoveInsectFromList;
-    }
-
-    private void OnDisable()
-    {
-        Enemy.OnDeath -= RemoveInsectFromList;
-    }
-
     private void EndStage()
     {
-        // to do stage complete
+        Debug.Log("koniec poziomu");
     }
     
     private void SpawnEnemy()
@@ -66,14 +57,19 @@ public class WaveManager : MonoBehaviour
         {
             case 1:
                 {
-                    if (insectsRemain > 0)
+                    if (enemiesRemainToEndOfWave > 0)
                     {
                         int randomIndex = Random.Range(0, 1);
                         randomPosition.x = Random.Range(-8, 8);
                         randomPosition.y = Random.Range(6, 8);
-                        enemiesOnBoard.Add(Instantiate(enemies[randomIndex], randomPosition, Quaternion.identity));
-                        insectsRemain--;
-                        waveStart = true;
+                        Instantiate(enemies[randomIndex], randomPosition, Quaternion.identity);
+                        enemiesRemainToEndOfWave--;
+                        enemiesOnBoard++;
+                        
+                        if (enemiesRemainToEndOfWave <= 0)
+                        {
+                            waveEnd = true;
+                        }
                     }
                 }
                 break;
@@ -81,12 +77,11 @@ public class WaveManager : MonoBehaviour
 
     }
 
-    public void RemoveInsectFromList(Enemy enemy)
-    {
-        enemy.DropGold(enemy.gold);
-        enemiesOnBoard.Remove(enemy);
-        Debug.Log(GameManager.Instance.gameData.playerGold);
-    }
+    //public void RemoveInsectFromList(Enemy enemy)
+    //{
+    //    enemiesOnBoard.Remove(enemy);
+    //    Debug.Log(GameManager.Instance.gameData.playerGold);
+    //}
 
   
 }
