@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
     private void EndStage()
     {
-        Debug.Log("koniec poziomu");
+        // todo end stage
     }
     
     private void SpawnEnemy()

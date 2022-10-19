@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9034c6d8b98e080428436aaa77e60ef3
+guid: 2bd730bf5d675854eb969d3b7d9bfe7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,22 +107,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlanesBody_0_0
+      name: PlanesBody_0_1
       rect:
         serializedVersion: 2
-        x: 66
-        y: 877
-        width: 101
-        height: 188
+        x: 100
+        y: 887
+        width: 139
+        height: 323
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6353ebe4d1cd4eb4b85a465139b30e01
-      internalID: -1715361457
+      spriteID: 742fe1c73f1fc784380b6d526856af81
+      internalID: -1599875639
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlanesBody_0_0: -1715361457
+      PlanesBody_0_1: -1599875639
+      PlanesBody_0_0: 162860011
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

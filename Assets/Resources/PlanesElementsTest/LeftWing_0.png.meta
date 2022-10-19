@@ -110,19 +110,19 @@ TextureImporter:
       name: LeftWing_0_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 640
-        width: 96
-        height: 129
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 95
+        y: 807
+        width: 314
+        height: 363
+      alignment: 3
+      pivot: {x: 1, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 875583d635d454a4ab02625032100ac5
-      internalID: 1776465106
+      spriteID: 98f45a39968796f4c93ed4c0124534ae
+      internalID: 788048145
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LeftWing_0_0: 1776465106
+      LeftWing_0_0: 788048145
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
