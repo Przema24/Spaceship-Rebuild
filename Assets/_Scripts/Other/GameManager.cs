@@ -19,11 +19,13 @@ public class GameManager : MonoBehaviour
 
         if (gameData == null)
         {
-            gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30 ,1);
+            gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30 ,1, 5, 6f);
             CreateNewGameData();
         }
-
-        CreateNewGameData();
+        else
+        {
+            CreateNewGameData();
+        }
     }
 
     private void Update()
@@ -46,5 +48,8 @@ public class GameManager : MonoBehaviour
         gameData.bulletSpeed = 8f;
         gameData.playerGold = 30;
         gameData.stage = 1;
+
+        gameData.enemyBaseAttack = 5;
+        gameData.enemyBulletSpeed = 6f;
     }
 }

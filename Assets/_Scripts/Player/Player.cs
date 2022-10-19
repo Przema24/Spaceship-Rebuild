@@ -78,5 +78,9 @@ public class Player : MonoBehaviour
         Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
     }
 
-    
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("damage " + damage);
+    }
 }

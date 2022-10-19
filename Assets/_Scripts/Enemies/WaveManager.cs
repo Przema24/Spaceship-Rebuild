@@ -30,7 +30,7 @@ public class WaveManager : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         timer -= Time.deltaTime;
 

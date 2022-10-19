@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
     {
         if (gameObject.transform.position.y > 15)
         {
-            Destroy(this.gameObject, 0.1f);
+            Destroy(this.gameObject);
         }
     }
 

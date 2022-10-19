@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     protected WaveManager waveManager;
 
     protected int hitpoints;
-    protected int damage;
+    protected int damageMultipler;
     public int gold;
 
     protected float speed;
