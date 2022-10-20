@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Script manage player ship behaviour
+
     public Bullet bullet;
-    public int hitPoints; 
+    public int actualHitPoints; 
 
     private float speed;
     private bool isOnBound = false;
 
     private void Start()
     {
-        hitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
+        actualHitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
         speed = GameManager.Instance.gameData.playerSpeed;
     }
 
@@ -81,6 +83,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("damage " + damage);
+        actualHitPoints -= damage;
+
+        if (actualHitPoints <= 0)
+        {
+            Debug.Log("live lost");
+        }
     }
 }
