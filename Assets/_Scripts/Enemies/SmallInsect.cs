@@ -5,7 +5,7 @@ public class SmallInsect : Enemy
 {
     public EnemyProjectile projectile;
 
-    private float timer;
+    
     private void Start()
     {
         timer = 1.8f;

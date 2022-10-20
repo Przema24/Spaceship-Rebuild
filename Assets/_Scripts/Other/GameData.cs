@@ -1,5 +1,6 @@
 public class GameData 
 {
+    // The game data. This script is very important for game saving and storing the data from whole game.
 
     public int lives;
     public int maxPlayerHitpoints;

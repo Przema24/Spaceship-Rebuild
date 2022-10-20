@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
     // Base class for enemy
 
     protected WaveManager waveManager;
+    protected float timer;
 
     protected int hitpoints;
     protected int damageMultipler;
@@ -20,9 +22,14 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject.transform.position.y < -8)
         {
-            waveManager.enemiesOnBoard--;
-            Death();
+            BehindScreenDeatch();
         }
+    }
+
+    private void BehindScreenDeatch()
+    {
+        waveManager.enemyList.Remove(gameObject.GetComponent<Enemy>());
+        Destroy(gameObject);
     }
 
 
@@ -37,9 +44,6 @@ public class Enemy : MonoBehaviour
 
         if (hitpoints <= 0)
         {
-            
-            DropGold(gold);
-            waveManager.enemiesOnBoard--;
             Death();
         }
     }
@@ -51,6 +55,8 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        DropGold(gold);
+        waveManager.enemyList.Remove(gameObject.GetComponent<Enemy>());
         Destroy(gameObject);
     }
 

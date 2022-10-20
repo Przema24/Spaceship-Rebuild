@@ -86,18 +86,6 @@ public class Player : MonoBehaviour
         Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
     }
 
-    //private void TiltLeft()
-    //{
-    //    Vector3 targetRotation = new Vector3(transform.rotation.x, -0.5f, transform.rotation.z);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(targetRotation.x, targetRotation.y, targetRotation.z, 1), Time.deltaTime * tiltSmooth);
-    //}
-
-    //private void TiltRight()
-    //{
-    //    Vector3 targetRotation = new Vector3(transform.rotation.x, 0.5f, transform.rotation.z);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(targetRotation.x, targetRotation.y, targetRotation.z, 1), Time.deltaTime * tiltSmooth);
-    //}
-
     public void TakeDamage(int damage)
     {
         actualHitPoints -= damage;
