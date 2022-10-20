@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class Player : MonoBehaviour
     private float speed;
     private bool isOnBound = false;
 
+    //private float tiltSmooth;
+
     private void Start()
     {
+        //tiltSmooth = 5f;
         actualHitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
         speed = GameManager.Instance.gameData.playerSpeed;
     }
@@ -34,11 +38,13 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             MoveLeft();
+            //TiltLeft();
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             MoveRight();
+            //TiltLeft();
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -80,6 +86,17 @@ public class Player : MonoBehaviour
         Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
     }
 
+    //private void TiltLeft()
+    //{
+    //    Vector3 targetRotation = new Vector3(transform.rotation.x, -0.5f, transform.rotation.z);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(targetRotation.x, targetRotation.y, targetRotation.z, 1), Time.deltaTime * tiltSmooth);
+    //}
+
+    //private void TiltRight()
+    //{
+    //    Vector3 targetRotation = new Vector3(transform.rotation.x, 0.5f, transform.rotation.z);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(targetRotation.x, targetRotation.y, targetRotation.z, 1), Time.deltaTime * tiltSmooth);
+    //}
 
     public void TakeDamage(int damage)
     {

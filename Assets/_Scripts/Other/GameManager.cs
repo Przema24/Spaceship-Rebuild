@@ -19,11 +19,6 @@ public class GameManager : MonoBehaviour
 
         if (gameData == null)
         {
-            gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30 ,1, 5, 6f);
-            CreateNewGameData();
-        }
-        else
-        {
             CreateNewGameData();
         }
     }
@@ -32,24 +27,12 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("quit");
             Application.Quit();
         }
     }
 
     private void CreateNewGameData()
     {
-        gameData.lives = 3;
-        gameData.maxPlayerHitpoints = 100;
-        gameData.maxPlayerShield = 0;
-        gameData.playerAttack = 5;
-        gameData.playerSpeed = 3.5f;
-
-        gameData.bulletSpeed = 8f;
-        gameData.playerGold = 30;
-        gameData.stage = 1;
-
-        gameData.enemyBaseAttack = 5;
-        gameData.enemyBulletSpeed = 6f;
+        gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30, 1, 5, 6f);
     }
 }
