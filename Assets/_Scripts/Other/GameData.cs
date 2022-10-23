@@ -15,9 +15,11 @@ public class GameData
     public int enemyBaseAttack;
     public float enemyBulletSpeed;
 
+    public bool gameStart;
+
     public GameData(int lives, int maxPlayerHitpoints, int maxPlayerShield, int playerAttack, float playerSpeed, 
         float bulletSpeed, int playerGold, int stage, 
-        int enemyBaseAttack, float enemyBulletSpeed)
+        int enemyBaseAttack, float enemyBulletSpeed, bool gameStart)
     {
         this.lives = lives;
         this.maxPlayerHitpoints = maxPlayerHitpoints;
@@ -31,5 +33,6 @@ public class GameData
 
         this.enemyBaseAttack = enemyBaseAttack;
         this.enemyBulletSpeed = enemyBulletSpeed;
+        this.gameStart = gameStart;
     }
 }

@@ -3,10 +3,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameData gameData;
-
     public Player player;
+
     private Vector3 playerStartPosition = new Vector3(0, -3.35f, 0);
     public static GameManager Instance { get; private set; }
+
+    public bool isGameStart = false;
     private void Awake()
     {
 
@@ -25,7 +27,12 @@ public class GameManager : MonoBehaviour
             CreateNewGameData();
         }
 
-        SpawnPlayer();
+        isGameStart = gameData.gameStart;
+
+        if (isGameStart)
+        {
+            SpawnPlayer();
+        }
     }
 
     private void Update()
@@ -38,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateNewGameData()
     {
-        gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30, 1, 5, 6f);
+        gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30, 1, 5, 6f, true);
     }
 
     private void SpawnPlayer()

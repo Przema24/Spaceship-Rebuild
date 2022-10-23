@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //tiltSmooth = 5f;
         actualHitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
         speed = GameManager.Instance.gameData.playerSpeed;
     }
@@ -38,13 +37,11 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             MoveLeft();
-            //TiltLeft();
         }
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             MoveRight();
-            //TiltLeft();
         }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
