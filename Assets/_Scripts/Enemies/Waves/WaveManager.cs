@@ -17,13 +17,6 @@ public class WaveManager : MonoBehaviour
     public Enemy[] enemies;
 
 
-    //public int enemiesOnBoard;
-
-    // counters help with Spawn function
-    int spawnCounter_A = 0;
-    int spawnCounter_B = 0;
-
-
     private bool waveStart = true;
     private bool waveEnd = false;
 
@@ -64,13 +57,24 @@ public class WaveManager : MonoBehaviour
         {
             case 1:
                 {
-                    Wave wave_A = new Wave(WaveData.enemyIndex, WaveData.EnemyToSpawnCount, WaveData.arraySpawnPoints, WaveData.timeA);
-                    StartCoroutine(SpawnA(wave_A.enemyIndex, wave_A.EnemyToSpawnCount, wave_A.arraySpawnPoint, wave_A.time));
+                    int[] spawnPoints = WaveData.ArraySpawnPoints_1;
+                    Wave wave = new Wave(0 , 20, spawnPoints, 0.8f);
+
+                    int[] spawnPoints2 = WaveData.ArraySpawnPoints_2;
+                    Wave wave2 = new Wave(1, 6, spawnPoints2, 1.4f);
+
+                    Wave[] waves = { wave, wave2 };
+
+                    foreach(Wave w in waves)
+                    {
+                        StartCoroutine(Spawn(w));
+                    }
                 }
                 break;
             case 2:
                 {
-                    
+                    //Wave wave = new Wave(WaveData.enemyIndex, WaveData.EnemyToSpawnCount, WaveData.firstArraySpawnPoints, WaveData.timeA);
+                    //StartCoroutine(Spawn(wave));
                 }
                 break;
         }
@@ -78,20 +82,20 @@ public class WaveManager : MonoBehaviour
     }
 
     
-    IEnumerator SpawnA(int enemyIndex, int EnemyToSpawnCount, int[] arraySpawnPoint, float time)
+    IEnumerator Spawn(Wave wave)
     {
-        while (EnemyToSpawnCount > 0)
+        int spawnCounter = 0;
+        while (wave.EnemyToSpawnCount > 0)
         {
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(wave.time);
 
-            int Index = enemyIndex;
+            int Index = wave.enemyIndex;
 
-            enemyList.Add(Instantiate(enemies[Index], spawnPoints[arraySpawnPoint[spawnCounter_A++]].transform.position, Quaternion.identity));
-            EnemyToSpawnCount--;
-
-            
+            enemyList.Add(Instantiate(enemies[Index], spawnPoints[wave.arraySpawnPoints[spawnCounter++]].transform.position, Quaternion.identity));
+            wave.EnemyToSpawnCount--;
         }
         waveEnd = true;
+        spawnCounter = 0;
     }
 
 }

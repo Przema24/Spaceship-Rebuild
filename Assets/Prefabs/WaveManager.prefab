@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8223479345223404865
 MonoBehaviour:
@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59bcb14222ee0248a77a4c402d24bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyList: []
   stage: 0
-  enemiesRemainToEndOfWave: 0
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -65,6 +65,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  enemiesOnBoard: 0
   enemies:
   - {fileID: 5443008980932393931, guid: 6eb26d6ba76274048b8a35e56dedb2be, type: 3}
+  - {fileID: 7432948895884770692, guid: b90fd0a139461de4790b02e530c57112, type: 3}

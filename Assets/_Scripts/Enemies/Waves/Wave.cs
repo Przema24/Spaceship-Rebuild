@@ -2,14 +2,14 @@ public class Wave
 {
     public int enemyIndex;
     public int EnemyToSpawnCount;
-    public int[] arraySpawnPoint;
+    public int[] arraySpawnPoints;
     public float time;
 
-    public Wave(int enemyIndex, int EnemyToSpawnCount, int[] arraySpawnPoint, float time)
+    public Wave(int enemyIndex, int EnemyToSpawnCount, int[] arraySpawnPoints, float time)
     {
         this.enemyIndex = enemyIndex;
         this.EnemyToSpawnCount = EnemyToSpawnCount;
-        this.arraySpawnPoint = arraySpawnPoint;
+        this.arraySpawnPoints = arraySpawnPoints;
         this.time = time;
     }
 }
