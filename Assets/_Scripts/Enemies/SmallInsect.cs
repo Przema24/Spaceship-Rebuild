@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class SmallInsect : Enemy
 {
-    public EnemyProjectile projectile;
-
     
     private void Start()
     {
@@ -27,15 +25,9 @@ public class SmallInsect : Enemy
         if (timer <= 0)
         {
             
-            Attack();
+            base.Attack();
             timer = 1.8f;
 
         }
-    }
-
-    protected void Attack()
-    {
-        EnemyProjectile enemyProjectile = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
-        enemyProjectile.multipler = damageMultipler;
     }
 }

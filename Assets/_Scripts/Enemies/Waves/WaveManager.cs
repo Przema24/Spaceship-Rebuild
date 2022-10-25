@@ -5,9 +5,6 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     /* Class manage enemy waves, spawn insects, (to-do) load data from other script 
-       enemyQueue[0] - number of enemies
-       enemyQueue[1] - a prefab index of enemies to spawn
-       nextSpawnPoint - an array of spawn points to spawn enemies 
      */
 
     public List<Enemy> enemyList;
@@ -57,10 +54,10 @@ public class WaveManager : MonoBehaviour
         {
             case 1:
                 {
-                    int[] spawnPoints = WaveData.ArraySpawnPoints_1;
+                    int[] spawnPoints = WaveData.ArraySpawnPoints_1_1;
                     Wave wave = new Wave(0 , 20, spawnPoints, 0.8f);
 
-                    int[] spawnPoints2 = WaveData.ArraySpawnPoints_2;
+                    int[] spawnPoints2 = WaveData.ArraySpawnPoints_1_2;
                     Wave wave2 = new Wave(1, 6, spawnPoints2, 1.4f);
 
                     Wave[] waves = { wave, wave2 };
@@ -73,7 +70,6 @@ public class WaveManager : MonoBehaviour
                 break;
             case 2:
                 {
-                    //Wave wave = new Wave(WaveData.enemyIndex, WaveData.EnemyToSpawnCount, WaveData.firstArraySpawnPoints, WaveData.timeA);
                     //StartCoroutine(Spawn(wave));
                 }
                 break;

@@ -3,6 +3,8 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyProjectile projectile;
+
     // Base class for enemy
 
     protected WaveManager waveManager;
@@ -60,5 +62,9 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    protected virtual void Attack()
+    {
+        EnemyProjectile enemyProjectile = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
+        enemyProjectile.multipler = damageMultipler;
+    }
 }

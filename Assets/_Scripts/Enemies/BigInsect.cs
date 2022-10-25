@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class BigInsect : Enemy
 {
-    public EnemyProjectile projectile;
-
     private void Start()
     {
         timer = 1.2f;
@@ -31,7 +29,7 @@ public class BigInsect : Enemy
         }
     }
 
-    protected void Attack()
+    protected override void Attack()
     {
         EnemyProjectile enemyProjectile1 = Instantiate(projectile, gameObject.transform.position, Quaternion.Euler(0, 0,-30));
         EnemyProjectile enemyProjectile2 = Instantiate(projectile, gameObject.transform.position, Quaternion.Euler(0, 0, 30));
