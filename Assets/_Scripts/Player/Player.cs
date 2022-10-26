@@ -6,7 +6,9 @@ public class Player : MonoBehaviour
     // Script manage player ship behaviour
 
     public Bullet bullet;
-    public int actualHitPoints; 
+    public int actualHitPoints;
+    public GameObject leftShootPoint;
+    public GameObject rightShootPoint;
 
     private float speed;
     private bool isOnBound = false;
@@ -79,8 +81,8 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[2].transform.position, Quaternion.identity);
-        Instantiate(bullet, GetComponentsInChildren<PlaneElement>()[4].transform.position, Quaternion.identity);
+        Instantiate(bullet, leftShootPoint.transform.position, Quaternion.identity);
+        Instantiate(bullet, rightShootPoint.transform.position, Quaternion.identity);
     }
 
     public void TakeDamage(int damage)

@@ -15,7 +15,7 @@ public class PlaneElement : MonoBehaviour
     private void LoadSprites()
     {
         gameObjectName = this.gameObject.name;
-        actualSprite = Resources.Load<Sprite>("PlanesElementsTest/" + gameObjectName + "_" + actualNumber);
+        actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (actualNumber + 1));
     }
 
     private void Start()
