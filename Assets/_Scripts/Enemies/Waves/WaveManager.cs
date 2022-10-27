@@ -13,6 +13,8 @@ public class WaveManager : MonoBehaviour
     public Transform[] spawnPoints;
     public Enemy[] enemies;
 
+    int[] spawnPoint;
+
 
     private bool waveStart = true;
     private bool waveEnd = false;
@@ -46,6 +48,10 @@ public class WaveManager : MonoBehaviour
     {
         // todo
         Debug.Log(enemyList.Count);
+        waveStart = false;
+        stage++;
+        SpawnEnemies();
+
     }
     
     private void SpawnEnemies()
@@ -54,23 +60,12 @@ public class WaveManager : MonoBehaviour
         {
             case 1:
                 {
-                    int[] spawnPoints = WaveData.ArraySpawnPoints_1_1;
-                    Wave wave = new Wave(0 , 20, spawnPoints, 0.8f);
-
-                    int[] spawnPoints2 = WaveData.ArraySpawnPoints_1_2;
-                    Wave wave2 = new Wave(1, 6, spawnPoints2, 1.4f);
-
-                    Wave[] waves = { wave, wave2 };
-
-                    foreach(Wave w in waves)
-                    {
-                        StartCoroutine(Spawn(w));
-                    }
+                    Wave1();
                 }
                 break;
             case 2:
                 {
-                    //StartCoroutine(Spawn(wave));
+                    Wave2();
                 }
                 break;
         }
@@ -80,6 +75,8 @@ public class WaveManager : MonoBehaviour
     
     IEnumerator Spawn(Wave wave)
     {
+        yield return new WaitForSeconds(wave.waveStartTimer);
+
         int spawnCounter = 0;
         while (wave.EnemyToSpawnCount > 0)
         {
@@ -94,4 +91,44 @@ public class WaveManager : MonoBehaviour
         spawnCounter = 0;
     }
 
+
+    // WAVES METHODS
+
+    private void Wave1()
+    {
+        spawnPoint = WaveData.leftWave;
+        Wave wave1 = new Wave(0, 0, 18, spawnPoint, 1.4f);
+
+        spawnPoint = WaveData.rightWave;
+        Wave wave2 = new Wave(14f, 0, 18, spawnPoint, 1.4f);
+
+        Wave[] waves = { wave1, wave2 };
+
+        foreach (Wave w in waves)
+        {
+            StartCoroutine(Spawn(w));
+        }
+    }
+
+    private void Wave2()
+    {
+        spawnPoint = WaveData.leftWave;
+        Wave wave1 = new Wave(0, 0, 18, spawnPoint, 1.4f);
+
+        spawnPoint = WaveData.leftWave;
+        Wave wave2 = new Wave(4f, 1, 18, spawnPoint, 1.4f);
+
+        spawnPoint = WaveData.rightWave;
+        Wave wave3 = new Wave(4f, 1, 18, spawnPoint, 1.4f);
+
+        spawnPoint = WaveData.rightWave;
+        Wave wave4 = new Wave(14f, 0, 18, spawnPoint, 1.4f);
+
+        Wave[] waves = { wave1, wave2, wave3, wave4 };
+
+        foreach (Wave w in waves)
+        {
+            StartCoroutine(Spawn(w));
+        }
+    }
 }
