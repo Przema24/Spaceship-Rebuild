@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateNewGameData()
     {
-        gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 30, 1, 5, 6f, SceneManager.GetActiveScene().name == "Game");
+        gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 300, 1, 5, 6f, SceneManager.GetActiveScene().name == "Game");
     }
 
     private void SpawnPlayer()

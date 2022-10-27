@@ -1,32 +1,49 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopElement : MonoBehaviour
 {
     private GameManager gameManager;
     public int price;
-    public bool Buyed { get; private set; }
+    public bool Bought { get; private set; }
     private Image image;
     private Button btn;
-
+    private TMP_Text text;
     private void Awake()
     {
         // to-do: wczytywanie z playerprefs
-        Buyed = false;
+        Bought = false;
     }
 
     private void Start()
     {
+        text = gameObject.GetComponentInChildren<TMP_Text>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         image = gameObject.GetComponent<Image>();
         btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(TryBuy);
+
+        UpdatePriceText();
+    }
+
+    private void UpdatePriceText()
+    {
+        if (Bought != true)
+        {
+            text.text = price.ToString();
+            text.color = Color.white;
+        }
+        else
+        {
+            text.text = "Bought";
+        }
     }
 
 
-    public bool IsBuyed()
+    public bool IsBought()
     {
-        if (Buyed == false)
+        if (Bought == false)
         {
             return false;
         }
@@ -35,7 +52,7 @@ public class ShopElement : MonoBehaviour
 
     public void TryBuy()
     {
-        if (Buyed == true)
+        if (Bought == true)
         {
             Debug.Log("kupiony juz");
             return;
@@ -48,10 +65,11 @@ public class ShopElement : MonoBehaviour
         }
         else
         {
-            Buyed = true;
+            Bought = true;
             Debug.Log("kupujesz");
             ChangeColor();
             gameManager.gameData.playerGold -= price;
+            UpdatePriceText();
         }
     }
     private void ChangeColor()

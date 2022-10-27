@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bound
   - Enemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SpritesOnUI
+    uniqueID: 2592056087
     locked: 0
