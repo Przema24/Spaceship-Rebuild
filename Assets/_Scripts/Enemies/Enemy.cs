@@ -5,8 +5,6 @@ public class Enemy : MonoBehaviour
 {
     public EnemyProjectile projectile;
 
-    // Base class for enemy
-
     protected WaveManager waveManager;
     protected float timer;
 
@@ -52,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void DropGold(int gold)
     {
-        GameManager.Instance.gameData.playerGold += gold;
+        GameManager.Instance.PlayerGetGold(gold);
     }
 
     private void Death()

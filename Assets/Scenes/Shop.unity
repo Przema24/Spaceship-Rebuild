@@ -6287,6 +6287,7 @@ GameObject:
   - component: {fileID: 1965863499}
   - component: {fileID: 1965863498}
   - component: {fileID: 1965863497}
+  - component: {fileID: 1965863501}
   m_Layer: 5
   m_Name: ShopUI
   m_TagString: Untagged
@@ -6379,6 +6380,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1965863501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965863496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680a1496b071cea4ead5ec595cef7d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelBtn: {fileID: 2096050085}
 --- !u!1001 &1970936509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7215,7 +7229,7 @@ GameObject:
   - component: {fileID: 2096050085}
   - component: {fileID: 2096050088}
   m_Layer: 5
-  m_Name: ButtonStartWave
+  m_Name: NextLevelBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7353,7 +7367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1470468449744622285}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LeftShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7371,7 +7385,7 @@ GameObject:
   - component: {fileID: 5886055745145818677}
   - component: {fileID: 8143112936413984041}
   - component: {fileID: 1420101252503975188}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Blasters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7493,7 +7507,6 @@ GameObject:
   - component: {fileID: 7363035425630081170}
   - component: {fileID: 7363035425630081133}
   - component: {fileID: 7363035425630081135}
-  - component: {fileID: 7363035426006362128}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7524,18 +7537,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7363035426006362128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7363035425630081134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3d2deeb50066248991ef810f374776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7434850448618390796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7545,7 +7546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975644020949189077}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: RightShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7578,7 +7579,7 @@ GameObject:
   - component: {fileID: 7611785905278634376}
   - component: {fileID: 7611785905278634379}
   - component: {fileID: 7611785905278634378}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: RightWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7662,9 +7663,9 @@ GameObject:
   - component: {fileID: 7611785905792393887}
   - component: {fileID: 7611785905792393888}
   - component: {fileID: 7611785905792393890}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerStarship
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7795,7 +7796,7 @@ GameObject:
   - component: {fileID: 7611785905924083042}
   - component: {fileID: 7611785905924083036}
   - component: {fileID: 7611785905924083039}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlanesBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7912,7 +7913,7 @@ GameObject:
   - component: {fileID: 7611785905974123637}
   - component: {fileID: 7611785905974123636}
   - component: {fileID: 7611785905974123639}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LeftWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -58,7 +58,7 @@ public class ShopElement : MonoBehaviour
             return;
         }
 
-        if (gameManager.gameData.playerGold < price)
+        if (gameManager.playerGold < price)
         {
             Debug.Log("nie masz kasy");
             return;
@@ -68,7 +68,7 @@ public class ShopElement : MonoBehaviour
             Bought = true;
             Debug.Log("kupujesz");
             ChangeColor();
-            gameManager.gameData.playerGold -= price;
+            gameManager.playerGold -= price;
             UpdatePriceText();
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -50,10 +51,15 @@ public class WaveManager : MonoBehaviour
         Debug.Log(enemyList.Count);
         waveStart = false;
         stage++;
-        SpawnEnemies();
 
+        Invoke("ReturnToShop", 2f);
     }
     
+    private void ReturnToShop()
+    {
+        SceneManager.LoadScene("Shop");
+    }
+
     private void SpawnEnemies()
     {
         switch(stage)

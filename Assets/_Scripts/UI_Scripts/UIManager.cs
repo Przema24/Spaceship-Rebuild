@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Button nextLevelBtn;
+    private TMP_Text nextLevelBtnText;
+    private GameManager gameManager;
+
+    private void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //gameManager.gameData.stage = 1;
+        nextLevelBtnText = nextLevelBtn.GetComponentInChildren<TMP_Text>();
+        nextLevelBtnText.text = $"Next stage: {gameManager.gameData.stage.ToString()}";
+        nextLevelBtn.onClick.AddListener(NextWave);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void NextWave()
     {
+        SceneManager.LoadScene("Game");
         
     }
 }
