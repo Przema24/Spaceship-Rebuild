@@ -62,22 +62,23 @@ public class ShopElement : MonoBehaviour
     {
         if (Bought == true)
         {
-            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].updateSprite(tier);
+            SaveElementTierInUse();
+            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
             return;
         }
 
         if (gameManager.playerGold < price)
         {
-            Debug.Log("nie masz kasy");
+            return;
         }
         else
         {
             Bought = true;
-            Debug.Log("kupujesz");
             ChangeColor();
             gameManager.playerGold -= price;
             UpdatePriceText();
-            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].updateSprite(tier);
+            SaveElementTierInUse();
+            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
         }
     }
 
@@ -105,5 +106,48 @@ public class ShopElement : MonoBehaviour
     private void ChangeColor()
     {
         image.color = Color.white;
+    }
+
+    private void SaveElementTierInUse()
+    {
+        int index;
+        if (planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].name == "body")
+        {
+            index = 0;
+        }
+        else if (planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].name == "leftWing")
+        {
+            index = 1;
+        }
+        else if (planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].name == "rightWing")
+        {
+            index = 2;
+        }
+        else
+        {
+            index = 3;
+        }
+
+        switch (index)
+        {
+            case 0:
+                PlayerPrefs.SetInt("bodyTier", tier);
+                PlayerPrefs.Save();
+                break;
+            case 1:
+                PlayerPrefs.SetInt("leftWingTier", tier);
+                PlayerPrefs.Save();
+                break;
+            case 2:
+                PlayerPrefs.SetInt("rightWingTier", tier);
+                PlayerPrefs.Save();
+                break;
+            case 3:
+                PlayerPrefs.SetInt("blastersTier", tier);
+                PlayerPrefs.Save();
+                break;
+            default: Debug.Log("wyjatek");
+                break;
+        }
     }
 }

@@ -6,6 +6,13 @@ public class GameManager : MonoBehaviour
     public Player player;
     private bool isFirstGameInSession;
 
+    public int bodyTier;
+    public int leftWingTier;
+    public int rightWingTier;
+    public int blastersTier;
+
+
+
     private Vector3 playerStartPosition = new Vector3(0, -3.35f, 0);
     public static GameManager Instance { get; private set; }
 
@@ -36,6 +43,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(Instance);
             isFirstGameInSession = true;
+            bodyTier = 0;
+            leftWingTier = 0;
+            rightWingTier = 0;
+            blastersTier = 0;
         }
 
         if (isFirstGameInSession == true)
@@ -49,7 +60,6 @@ public class GameManager : MonoBehaviour
                 FirstSave();
                 Debug.Log("nadpisuje dane");
             }
-            //CreateNewGameData();
             isFirstGameInSession = false;
         }
         else
@@ -112,6 +122,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("bulletSpeed", 8f);
         PlayerPrefs.SetFloat("enemyBulletSpeed", 6);
 
+        PlayerPrefs.SetInt("bodyTier", 0);
+        PlayerPrefs.SetInt("leftWingTier", 0);
+        PlayerPrefs.SetInt("rightWingTier", 0);
+        PlayerPrefs.SetInt("blastersTier",0 );
+
         PlayerPrefs.Save();
     }
 
@@ -130,6 +145,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("bulletSpeed", bulletSpeed);
         PlayerPrefs.SetFloat("enemyBulletSpeed", enemyBulletSpeed);
 
+        PlayerPrefs.SetInt("bodyTier", bodyTier);
+        PlayerPrefs.SetInt("leftWingTier", leftWingTier);
+        PlayerPrefs.SetInt("rightWingTier", rightWingTier);
+        PlayerPrefs.SetInt("blastersTier", blastersTier);
+
         PlayerPrefs.Save();
     }
 
@@ -147,5 +167,15 @@ public class GameManager : MonoBehaviour
         playerSpeed = PlayerPrefs.GetFloat("playerSpeed");
         bulletSpeed = PlayerPrefs.GetFloat("bulletSpeed");
         enemyBulletSpeed = PlayerPrefs.GetFloat("enemyBulletSpeed");
+
+        bodyTier = PlayerPrefs.GetInt("bodyTier");
+        leftWingTier = PlayerPrefs.GetInt("leftWingTier");
+        rightWingTier = PlayerPrefs.GetInt("rightWingTier");
+        blastersTier =  PlayerPrefs.GetInt("blastersTier");
+
+        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
+        Debug.Log(PlayerPrefs.GetInt("leftWingTier"));
+        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
+        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
     }
 }

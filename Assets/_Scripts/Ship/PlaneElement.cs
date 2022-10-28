@@ -6,6 +6,7 @@ public class PlaneElement : MonoBehaviour
 
     public Sprite actualSprite;
     public int actualNumber;
+    public string type;
 
     private SpriteRenderer spriteRenderer;
 
@@ -13,6 +14,8 @@ public class PlaneElement : MonoBehaviour
 
     private void LoadSprites()
     {
+        PlayerPrefs.SetInt("tier", actualNumber);
+        PlayerPrefs.Save();
         gameObjectName = this.gameObject.name;
         actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (actualNumber + 1));
     }
@@ -26,17 +29,36 @@ public class PlaneElement : MonoBehaviour
         displaySprite();
     }
 
-    private void displaySprite()
+    public void displaySprite()
     {
         if (actualSprite != null)
         {
             spriteRenderer.sprite = actualSprite;
+            Debug.Log("update sprite");
         }
     }
 
-    public void updateSprite(int actualNumber)
+    public void displaySprite(int tier)
     {
-        actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (actualNumber + 1));
-        displaySprite();
+        if (actualSprite != null)
+        {
+            actualNumber = tier;
+            actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (tier + 1));
+            spriteRenderer.sprite = actualSprite;
+            Debug.Log("update sprite again");
+        }
     }
+
+    //public void updateSprite()
+    //{
+    //    displaySprite();
+    //}
+    //
+    //public void updateActualNumber(int tier)
+    //{
+   //     actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (tier + 1));
+    //    PlayerPrefs.SetInt("tier", tier);
+    //    PlayerPrefs.Save();
+    //    actualNumber = tier;
+    //}
 }

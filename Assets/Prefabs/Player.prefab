@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualSprite: {fileID: 0}
   actualNumber: 0
+  type: blasters
 --- !u!1 &8359002606205957684
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualSprite: {fileID: 0}
   actualNumber: 0
+  type: leftWing
 --- !u!1 &8831206414117240408
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualSprite: {fileID: 0}
   actualNumber: 0
+  type: body
 --- !u!212 &8831206414117240423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -561,3 +564,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualSprite: {fileID: 0}
   actualNumber: 0
+  type: rightWing
