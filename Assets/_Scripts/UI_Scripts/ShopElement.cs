@@ -1,19 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ShopElement : MonoBehaviour
 {
     private GameManager gameManager;
+    public int tier;
+    public string type;
     public int price;
     public bool Bought { get; private set; }
     private Image image;
     private Button btn;
     private TMP_Text text;
+
+    public PlaneElement[] planeElement;
+   
     private void Awake()
     {
         // to-do: wczytywanie z playerprefs
         Bought = false;
+
     }
 
     private void Start()
@@ -54,14 +62,13 @@ public class ShopElement : MonoBehaviour
     {
         if (Bought == true)
         {
-            Debug.Log("kupiony juz");
+            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].updateSprite(tier);
             return;
         }
 
         if (gameManager.playerGold < price)
         {
             Debug.Log("nie masz kasy");
-            return;
         }
         else
         {
@@ -70,7 +77,30 @@ public class ShopElement : MonoBehaviour
             ChangeColor();
             gameManager.playerGold -= price;
             UpdatePriceText();
+            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].updateSprite(tier);
         }
+    }
+
+    private int GetPlaneElementPosition(string name)
+    {
+        int index;
+        if (name == "body")
+        {
+            index = 0;
+        }
+        else if (name == "leftwing")
+        {
+            index = 1;
+        }
+        else if (name == "rightwing")
+        {
+            index = 2;
+        }
+        else
+        {
+            index = 3;
+        }
+        return index;
     }
     private void ChangeColor()
     {

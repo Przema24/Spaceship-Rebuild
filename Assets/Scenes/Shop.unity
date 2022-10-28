@@ -279,7 +279,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 2
+  type: blasters
   price: 200
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &120715070
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +954,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 4
+  type: leftwing
   price: 450
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &191997636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,7 +1388,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 3
+  type: leftwing
   price: 225
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &264573786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2085,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 2
+  type: leftwing
   price: 125
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &586029643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,7 +2519,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 1
+  type: leftwing
   price: 50
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &752026912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,7 +2826,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 3
+  type: rightwing
   price: 225
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &858618050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,7 +2990,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 1
+  type: blasters
   price: 75
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &964218983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,7 +3559,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 3
+  type: body
   price: 400
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1176659412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,7 +4887,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 4
+  type: rightwing
   price: 450
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1591830998
 GameObject:
   m_ObjectHideFlags: 0
@@ -5231,7 +5294,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 2
+  type: rightwing
   price: 125
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1711394275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,7 +5849,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 4
+  type: blasters
   price: 600
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1813003250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5936,7 +6013,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 4
+  type: body
   price: 800
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1826915872
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,6 +6485,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: playerGold
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4342747001565082195, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6608,7 +6696,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 1
+  type: rightwing
   price: 50
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &2059359263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,7 +6860,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 3
+  type: blasters
   price: 275
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &2087505736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7057,7 +7159,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 1
+  type: body
   price: 100
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &2094649064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,7 +7323,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tier: 2
+  type: body
   price: 200
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &2096050083
 GameObject:
   m_ObjectHideFlags: 0

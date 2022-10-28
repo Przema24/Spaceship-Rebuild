@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        //gameManager.gameData.stage = 1;
         nextLevelBtnText = nextLevelBtn.GetComponentInChildren<TMP_Text>();
         nextLevelBtnText.text = $"Next stage: {gameManager.gameData.stage.ToString()}";
         nextLevelBtn.onClick.AddListener(NextWave);
@@ -21,6 +20,5 @@ public class UIManager : MonoBehaviour
     private void NextWave()
     {
         SceneManager.LoadScene("Game");
-        
     }
 }

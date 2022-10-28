@@ -33,4 +33,10 @@ public class PlaneElement : MonoBehaviour
             spriteRenderer.sprite = actualSprite;
         }
     }
+
+    public void updateSprite(int actualNumber)
+    {
+        actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (actualNumber + 1));
+        displaySprite();
+    }
 }
