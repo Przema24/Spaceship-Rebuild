@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        actualHitPoints = GameManager.Instance.gameData.maxPlayerHitpoints;
-        speed = GameManager.Instance.gameData.playerSpeed;
+        actualHitPoints = GameManager.Instance.maxPlayerHitpoints;
+        speed = GameManager.Instance.playerSpeed;
     }
 
     private void Update()

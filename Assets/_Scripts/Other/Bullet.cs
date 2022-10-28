@@ -8,8 +8,8 @@ public class Bullet : MonoBehaviour
     private float speed;
     private void Start()
     {
-        damage = GameManager.Instance.gameData.playerAttack;
-        speed = GameManager.Instance.gameData.bulletSpeed;
+        damage = GameManager.Instance.playerAttack;
+        speed = GameManager.Instance.bulletSpeed;
     }
 
     private void FixedUpdate()

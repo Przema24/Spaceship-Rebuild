@@ -48,7 +48,6 @@ public class WaveManager : MonoBehaviour
     private void EndStage()
     {
         // todo
-        Debug.Log(enemyList.Count);
         waveStart = false;
         stage++;
 

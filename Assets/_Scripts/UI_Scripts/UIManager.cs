@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         nextLevelBtnText = nextLevelBtn.GetComponentInChildren<TMP_Text>();
-        nextLevelBtnText.text = $"Next stage: {gameManager.gameData.stage.ToString()}";
+        nextLevelBtnText.text = $"Next stage: {gameManager.stage.ToString()}";
         nextLevelBtn.onClick.AddListener(NextWave);
     }
 

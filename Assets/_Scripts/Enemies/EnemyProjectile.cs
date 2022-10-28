@@ -9,7 +9,7 @@ public class EnemyProjectile : MonoBehaviour
 
     private void Start()
     {
-        speed = GameManager.Instance.gameData.enemyBulletSpeed;
+        speed = GameManager.Instance.enemyBulletSpeed;
     }
 
     private void FixedUpdate()
@@ -28,7 +28,7 @@ public class EnemyProjectile : MonoBehaviour
 
     private void CalculateDamage()
     {
-        damage = GameManager.Instance.gameData.enemyBaseAttack * multipler;
+        damage = GameManager.Instance.enemyBaseAttack * multipler;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
