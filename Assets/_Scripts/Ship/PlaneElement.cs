@@ -7,11 +7,11 @@ public class PlaneElement : MonoBehaviour
     public Sprite actualSprite;
     public int actualNumber;
     public string planeName;
-    //private SavingAndLoadingStarshipElements saving;
 
     private SpriteRenderer spriteRenderer;
     public Sprite[] spritesToDisplay;
 
+    private GameManager gameManager;
 
     // awake for test
     private void Awake()
@@ -22,12 +22,32 @@ public class PlaneElement : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         LoadMe();
     }
 
     private void LoadMe()
     {
-        actualSprite = Resources.Load<Sprite>("Starship/" + planeName + "_0" + (PlayerPrefs.GetInt(planeName) + 1));
+        int loadingTier;
+
+        if (planeName == "PlanesBody")
+        {
+            loadingTier = gameManager.planeBody;
+        }
+        else if (planeName == "LeftWing")
+        {
+            loadingTier = gameManager.leftWing;
+        }
+        else if (planeName == "RightWing")
+        {
+            loadingTier = gameManager.rightWing;
+        }
+        else  
+        {
+            loadingTier = gameManager.blasters;
+        }
+
+        actualSprite = Resources.Load<Sprite>("Starship/" + planeName + "_0" + (loadingTier + 1));
         spriteRenderer.sprite = actualSprite;
     }
 

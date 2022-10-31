@@ -57,9 +57,9 @@ public class ShopElement : MonoBehaviour
     {
         if (Bought == true)
         {
-            Debug.Log(this.gameObject.GetComponent<ShopElement>().type);
-            Debug.Log(tier);
+            Debug.Log(GetPlaneElementPosition(gameObject.GetComponent<ShopElement>().type));
             planeElement[GetPlaneElementPosition(gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
+            gameManager.UpdatePlaneElementTierData(type, tier);
             return;
         }
 
@@ -69,12 +69,13 @@ public class ShopElement : MonoBehaviour
         }
         else
         {
+            Debug.Log(GetPlaneElementPosition(gameObject.GetComponent<ShopElement>().type));
             Bought = true;
             ChangeColor();
             gameManager.playerGold -= price;
             UpdatePriceText();
-
             planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
+            gameManager.UpdatePlaneElementTierData(type, tier);
         }
     }
 

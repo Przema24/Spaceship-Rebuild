@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualSprite: {fileID: 0}
   actualNumber: 0
-  planeName: PlaneBody
+  planeName: PlanesBody
   spritesToDisplay:
   - {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
   - {fileID: 1954972081, guid: 1613c2578ca519b458a3b6abc36a2797, type: 3}

@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
 
     private void NextWave()
     {
+        gameManager.Save();
         SceneManager.LoadScene("Game");
     }
 }
