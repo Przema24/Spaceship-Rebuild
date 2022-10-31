@@ -10,19 +10,14 @@ public class ShopElement : MonoBehaviour
     public int tier;
     public string type;
     public int price;
-    public bool Bought { get; private set; }
+    public bool Bought;
     private Image image;
     private Button btn;
     private TMP_Text text;
 
     public PlaneElement[] planeElement;
    
-    private void Awake()
-    {
-        // to-do: wczytywanie z playerprefs
-        Bought = false;
-
-    }
+    
 
     private void Start()
     {
@@ -62,8 +57,9 @@ public class ShopElement : MonoBehaviour
     {
         if (Bought == true)
         {
-            SaveElementTierInUse();
-            planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
+            Debug.Log(this.gameObject.GetComponent<ShopElement>().type);
+            Debug.Log(tier);
+            planeElement[GetPlaneElementPosition(gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
             return;
         }
 
@@ -77,7 +73,7 @@ public class ShopElement : MonoBehaviour
             ChangeColor();
             gameManager.playerGold -= price;
             UpdatePriceText();
-            SaveElementTierInUse();
+
             planeElement[GetPlaneElementPosition(this.gameObject.GetComponent<ShopElement>().type)].displaySprite(tier);
         }
     }
@@ -107,7 +103,7 @@ public class ShopElement : MonoBehaviour
     {
         image.color = Color.white;
     }
-
+    /*
     private void SaveElementTierInUse()
     {
         int index;
@@ -131,23 +127,36 @@ public class ShopElement : MonoBehaviour
         switch (index)
         {
             case 0:
-                PlayerPrefs.SetInt("bodyTier", tier);
-                PlayerPrefs.Save();
+                {
+                    gameManager.planeElements[0].tier = index;
+                }
+                //PlayerPrefs.SetInt("bodyTier", tier);
+                //PlayerPrefs.Save();
                 break;
             case 1:
-                PlayerPrefs.SetInt("leftWingTier", tier);
-                PlayerPrefs.Save();
+                {
+                    gameManager.elementsData[1].tier = index;
+                }
+                //PlayerPrefs.SetInt("leftWingTier", tier);
+                //PlayerPrefs.Save();
                 break;
             case 2:
-                PlayerPrefs.SetInt("rightWingTier", tier);
-                PlayerPrefs.Save();
+                {
+                    gameManager.elementsData[2].tier = index;
+                }
+                //PlayerPrefs.SetInt("rightWingTier", tier);
+                //PlayerPrefs.Save();
                 break;
             case 3:
-                PlayerPrefs.SetInt("blastersTier", tier);
-                PlayerPrefs.Save();
+                {
+                    gameManager.elementsData[3].tier = index;
+                }
+                //PlayerPrefs.SetInt("blastersTier", tier);
+                //PlayerPrefs.Save();
                 break;
             default: Debug.Log("wyjatek");
                 break;
         }
-    }
+    
+    } */
 }

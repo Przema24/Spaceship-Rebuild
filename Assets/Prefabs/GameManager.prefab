@@ -45,4 +45,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8831206414499271078, guid: b48db04dd19f63c48bc8433955c3e7a8, type: 3}
+  bodyTier: 0
+  leftWingTier: 0
+  rightWingTier: 0
+  blastersTier: 0
   isGameStart: 0
+  lives: 0
+  maxPlayerHitpoints: 0
+  maxPlayerShield: 0
+  playerAttack: 0
+  playerGold: 0
+  stage: 0
+  enemyBaseAttack: 0
+  playerSpeed: 0
+  bulletSpeed: 0
+  enemyBulletSpeed: 0
+  gameStart: 0
+  planeElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

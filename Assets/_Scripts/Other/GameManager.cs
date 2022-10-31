@@ -6,10 +6,11 @@ public class GameManager : MonoBehaviour
     public Player player;
     private bool isFirstGameInSession;
 
-    public int bodyTier;
-    public int leftWingTier;
-    public int rightWingTier;
-    public int blastersTier;
+    // tiers for plane items used
+    public int planeBody;
+    public int leftWing;
+    public int rightWing;
+    public int blasters;
 
 
 
@@ -33,7 +34,10 @@ public class GameManager : MonoBehaviour
     // not save in PlayerPrefs
     public bool gameStart;
 
-    //3, 100, 0, 5, 3.5f, 8, 80, 1, 5, 6f, SceneManager.GetActiveScene().name == "Game")
+
+    public PlaneElement[] planeElements;
+
+   
 
     private void Awake()
     {
@@ -43,22 +47,25 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(Instance);
             isFirstGameInSession = true;
-            bodyTier = 0;
-            leftWingTier = 0;
-            rightWingTier = 0;
-            blastersTier = 0;
+            planeBody = 0;
+            leftWing = 0;
+            rightWing = 0;
+            blasters = 0;
+
+            // loading all data for next sessions after application close TO-DO
         }
 
         if (isFirstGameInSession == true)
         {
             if (PlayerPrefs.HasKey("lives"))
             {
+                FirstLoadData();
                 Load();
+
             }
             else
             {
-                FirstSave();
-                Debug.Log("nadpisuje dane");
+                FirstLoadData();
             }
             isFirstGameInSession = false;
         }
@@ -70,12 +77,25 @@ public class GameManager : MonoBehaviour
 
         if (gameStart)
         {
-            Save();
-            SpawnPlayer();
+
         }
         else
         {
+            
             Save();
+        }
+    }
+
+    private void Start()
+    {
+        if (gameStart)
+        {
+            SpawnPlayer();
+            DisplayAllElements();
+        }
+        else
+        {
+            DisplayAllElements();
         }
     }
 
@@ -87,27 +107,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //private void CreateNewGameData()
-    //{
-    //    gameData = new GameData(3, 100, 0, 5, 3.5f, 8, 80, 1, 5, 6f, SceneManager.GetActiveScene().name == "Game");
-    //}
-
-    //private void ReloadGameData()
-    //{
-    //    gameData = new GameData(this.lives, this.maxPlayerHitpoints, this.maxPlayerShield, this.playerAttack, this.playerSpeed, this.bulletSpeed, this.playerGold, this.stage, this.enemyBaseAttack, this.enemyBulletSpeed, SceneManager.GetActiveScene().name == "Game");
-    //}
 
     private void SpawnPlayer()
     {
         Instantiate(player, playerStartPosition, Quaternion.identity);
     }
 
+
     public void PlayerGetGold(int gold)
     {
         playerGold += gold;
     }
 
-    public void FirstSave()
+    public void FirstLoadData()
     {
         PlayerPrefs.SetInt("lives", 3);
         PlayerPrefs.SetInt("maxPlayerHitpoints", 100);
@@ -122,12 +134,16 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("bulletSpeed", 8f);
         PlayerPrefs.SetFloat("enemyBulletSpeed", 6);
 
-        PlayerPrefs.SetInt("bodyTier", 0);
-        PlayerPrefs.SetInt("leftWingTier", 0);
-        PlayerPrefs.SetInt("rightWingTier", 0);
-        PlayerPrefs.SetInt("blastersTier",0 );
+
+        // plane elements
+        PlayerPrefs.SetInt("planeBody", 0);
+        PlayerPrefs.SetInt("leftWing", 0);
+        PlayerPrefs.SetInt("rightWing", 0);
+        PlayerPrefs.SetInt("blasters",0 );
 
         PlayerPrefs.Save();
+
+        Load();
     }
 
     public void Save()
@@ -145,10 +161,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("bulletSpeed", bulletSpeed);
         PlayerPrefs.SetFloat("enemyBulletSpeed", enemyBulletSpeed);
 
-        PlayerPrefs.SetInt("bodyTier", bodyTier);
-        PlayerPrefs.SetInt("leftWingTier", leftWingTier);
-        PlayerPrefs.SetInt("rightWingTier", rightWingTier);
-        PlayerPrefs.SetInt("blastersTier", blastersTier);
+        PlayerPrefs.SetInt("planeBody", planeBody);
+        PlayerPrefs.SetInt("leftWing", leftWing);
+        PlayerPrefs.SetInt("rightWing", rightWing);
+        PlayerPrefs.SetInt("blasters", blasters);
 
         PlayerPrefs.Save();
     }
@@ -168,14 +184,67 @@ public class GameManager : MonoBehaviour
         bulletSpeed = PlayerPrefs.GetFloat("bulletSpeed");
         enemyBulletSpeed = PlayerPrefs.GetFloat("enemyBulletSpeed");
 
-        bodyTier = PlayerPrefs.GetInt("bodyTier");
-        leftWingTier = PlayerPrefs.GetInt("leftWingTier");
-        rightWingTier = PlayerPrefs.GetInt("rightWingTier");
-        blastersTier =  PlayerPrefs.GetInt("blastersTier");
-
-        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
-        Debug.Log(PlayerPrefs.GetInt("leftWingTier"));
-        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
-        Debug.Log(PlayerPrefs.GetInt("bodyTier"));
+        planeBody = PlayerPrefs.GetInt("planeBody");
+        leftWing = PlayerPrefs.GetInt("leftWing");
+        rightWing = PlayerPrefs.GetInt("rightWingr");
+        blasters =  PlayerPrefs.GetInt("blasters");
     }
+
+
+    // TEST
+
+    private void DisplayAllElements()
+    {
+        string[] elementTypes = new string[4];
+        elementTypes[0] = "PlaneBody";
+        elementTypes[1] = "Blasters";
+        elementTypes[2] = "LeftWing";
+        elementTypes[3] = "RightWing";
+
+
+        foreach (string name in elementTypes)
+        {
+            foreach (PlaneElement p in planeElements)
+            {
+                //Debug.Log(e.type + " " + p.type);
+                if (name == p.planeName)
+                {
+                    
+                }
+            }
+        }
+    }
+
+    public void UpdateElementTier(ShopElement shopElement)
+    {
+        /*
+        string t = shopElement.type;
+
+        switch (t)
+        {
+            case "body":
+                {
+                    shopElement.tier = shopElement.tier;
+                }
+                break;
+            case "leftWing":
+                {
+                    leftwing.tier = shopElement.tier;
+                }
+                break;
+            case "rightWing":
+                {
+                    rightwing.tier = shopElement.tier;
+                }
+                break;
+            case "blasters":
+                {
+                    blasters.tier = shopElement.tier;
+                }
+                break;
+        }  */
+    }
+
+
+
 }

@@ -6,59 +6,142 @@ public class PlaneElement : MonoBehaviour
 
     public Sprite actualSprite;
     public int actualNumber;
-    public string type;
+    public string planeName;
+    //private SavingAndLoadingStarshipElements saving;
 
     private SpriteRenderer spriteRenderer;
+    public Sprite[] spritesToDisplay;
 
-    private string gameObjectName;
 
-    private void LoadSprites()
+    // awake for test
+    private void Awake()
     {
-        PlayerPrefs.SetInt("tier", actualNumber);
-        PlayerPrefs.Save();
-        gameObjectName = this.gameObject.name;
-        actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (actualNumber + 1));
+        //actualNumber = 0;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        actualNumber = 0;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        LoadSprites();
-        displaySprite();
+        LoadMe();
     }
 
-    public void displaySprite()
+    private void LoadMe()
     {
-        if (actualSprite != null)
-        {
-            spriteRenderer.sprite = actualSprite;
-            Debug.Log("update sprite");
-        }
+        actualSprite = Resources.Load<Sprite>("Starship/" + planeName + "_0" + (PlayerPrefs.GetInt(planeName) + 1));
+        spriteRenderer.sprite = actualSprite;
     }
+
 
     public void displaySprite(int tier)
     {
+        actualNumber = tier;
+        
         if (actualSprite != null)
         {
-            actualNumber = tier;
-            actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (tier + 1));
-            spriteRenderer.sprite = actualSprite;
-            Debug.Log("update sprite again");
+            if (planeName == "Blasters")
+            {
+                switch (tier)
+                {
+                    case 0:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "blasters" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 1:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "blasters" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 2:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "blasters" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 3:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "blasters" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 4:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "blasters" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                }
+            }
+            else if (planeName == "LeftWing")
+            {
+                switch (tier)
+                {
+                    case 0:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "leftWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 1:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "leftWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 2:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "leftWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 3:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "leftWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 4:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "leftWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                }
+            }
+            else if (planeName == "PlanesBody")
+            {
+                switch (tier)
+                {
+                    case 0:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "PlanesBody" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 1:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "PlanesBody" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 2:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "PlanesBody" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 3:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "PlanesBody" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 4:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "PlanesBody" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                }
+            }
+            else if (planeName == "RightWing")
+            {
+                switch (tier)
+                {
+                    case 0:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "RightWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 1:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "RightWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 2:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "RightWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 3:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "RightWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                    case 4:
+                        actualSprite = Resources.Load<Sprite>("Starship/" + "RightWing" + "_0" + (tier + 1));
+                        spriteRenderer.sprite = actualSprite;
+                        break;
+                }
+            }
         }
     }
-
-    //public void updateSprite()
-    //{
-    //    displaySprite();
-    //}
-    //
-    //public void updateActualNumber(int tier)
-    //{
-   //     actualSprite = Resources.Load<Sprite>("Starship/" + gameObjectName + "_0" + (tier + 1));
-    //    PlayerPrefs.SetInt("tier", tier);
-    //    PlayerPrefs.Save();
-    //    actualNumber = tier;
-    //}
 }

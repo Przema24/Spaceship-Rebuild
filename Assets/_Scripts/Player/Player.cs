@@ -1,9 +1,8 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
-    // Script manage player ship behaviour
+    //SavingAndLoadingStarshipElements saving;
 
     public Bullet bullet;
     public int actualHitPoints;
@@ -13,12 +12,13 @@ public class Player : MonoBehaviour
     private float speed;
     private bool isOnBound = false;
 
-    //private float tiltSmooth;
 
     private void Start()
     {
         actualHitPoints = GameManager.Instance.maxPlayerHitpoints;
         speed = GameManager.Instance.playerSpeed;
+        //saving = FindObjectOfType<SavingAndLoadingStarshipElements>();
+        //saving.DisplayAllElements();
     }
 
     private void Update()

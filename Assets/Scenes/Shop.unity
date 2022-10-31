@@ -282,6 +282,7 @@ MonoBehaviour:
   tier: 2
   type: blasters
   price: 200
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -405,6 +406,7 @@ GameObject:
   - component: {fileID: 137184150}
   - component: {fileID: 137184149}
   - component: {fileID: 137184152}
+  - component: {fileID: 137184153}
   m_Layer: 5
   m_Name: ButtonBlasters_0
   m_TagString: Untagged
@@ -535,6 +537,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &137184153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137184147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 0
+  type: blasters
+  price: 0
+  Bought: 1
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &170834983
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +980,7 @@ MonoBehaviour:
   tier: 4
   type: leftwing
   price: 450
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -1391,6 +1415,7 @@ MonoBehaviour:
   tier: 3
   type: leftwing
   price: 225
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -2088,6 +2113,7 @@ MonoBehaviour:
   tier: 2
   type: leftwing
   price: 125
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -2522,6 +2548,7 @@ MonoBehaviour:
   tier: 1
   type: leftwing
   price: 50
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -2540,6 +2567,7 @@ GameObject:
   - component: {fileID: 752026915}
   - component: {fileID: 752026914}
   - component: {fileID: 752026917}
+  - component: {fileID: 752026918}
   m_Layer: 5
   m_Name: ButtonPlanebody_0
   m_TagString: Untagged
@@ -2670,6 +2698,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &752026918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752026912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 0
+  type: body
+  price: 0
+  Bought: 1
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &838145845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2878,7 @@ MonoBehaviour:
   tier: 3
   type: rightwing
   price: 225
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -2993,6 +3043,7 @@ MonoBehaviour:
   tier: 1
   type: blasters
   price: 75
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -3562,6 +3613,7 @@ MonoBehaviour:
   tier: 3
   type: body
   price: 400
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -4331,6 +4383,7 @@ GameObject:
   - component: {fileID: 1506655415}
   - component: {fileID: 1506655414}
   - component: {fileID: 1506655417}
+  - component: {fileID: 1506655418}
   m_Layer: 5
   m_Name: ButtonRightWing_0
   m_TagString: Untagged
@@ -4461,6 +4514,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1506655418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506655412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 0
+  type: rightwing
+  price: 0
+  Bought: 1
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1512153104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +4964,7 @@ MonoBehaviour:
   tier: 4
   type: rightwing
   price: 450
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -5297,6 +5372,7 @@ MonoBehaviour:
   tier: 2
   type: rightwing
   price: 125
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -5852,6 +5928,7 @@ MonoBehaviour:
   tier: 4
   type: blasters
   price: 600
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -6016,6 +6093,7 @@ MonoBehaviour:
   tier: 4
   type: body
   price: 800
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -6034,6 +6112,7 @@ GameObject:
   - component: {fileID: 1826915875}
   - component: {fileID: 1826915874}
   - component: {fileID: 1826915877}
+  - component: {fileID: 1826915878}
   m_Layer: 5
   m_Name: ButtonLeftWing_0
   m_TagString: Untagged
@@ -6164,6 +6243,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1826915878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826915872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae0451cde1636c4f945bf263cb2ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tier: 0
+  type: leftwing
+  price: 0
+  Bought: 1
+  planeElement:
+  - {fileID: 7611785905924083036}
+  - {fileID: 7611785905974123639}
+  - {fileID: 7611785905278634378}
+  - {fileID: 1420101252503975188}
 --- !u!1 &1846326449
 GameObject:
   m_ObjectHideFlags: 0
@@ -6485,6 +6585,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 7611785905924083036}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 1420101252503975188}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[2]
+      value: 
+      objectReference: {fileID: 7611785905974123639}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[3]
+      value: 
+      objectReference: {fileID: 7611785905278634378}
     - target: {fileID: 4342747001565082195, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6695,6 +6811,7 @@ MonoBehaviour:
   tier: 1
   type: rightwing
   price: 50
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -6859,6 +6976,7 @@ MonoBehaviour:
   tier: 3
   type: blasters
   price: 275
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -7158,6 +7276,7 @@ MonoBehaviour:
   tier: 1
   type: body
   price: 100
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -7322,6 +7441,7 @@ MonoBehaviour:
   tier: 2
   type: body
   price: 200
+  Bought: 0
   planeElement:
   - {fileID: 7611785905924083036}
   - {fileID: 7611785905974123639}
@@ -7531,9 +7651,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808ddd6f7ec116418051f61e7e08883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualSprite: {fileID: 0}
+  actualSprite: {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
   actualNumber: 0
-  type: blasters
+  planeName: Blasters
+  spritesToDisplay:
+  - {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
+  - {fileID: 1954972081, guid: 1613c2578ca519b458a3b6abc36a2797, type: 3}
+  - {fileID: -929278411, guid: 1d9fa5947470c664280880234a41a504, type: 3}
+  - {fileID: 1807998079, guid: 0ce3b8c38e594b4458ac703d43bb997b, type: 3}
+  - {fileID: 2064430010, guid: 5fb4053c1a19e4a4dac4752e88591e49, type: 3}
+  - {fileID: -1822181230, guid: 6494781d39aca024bb9517a9b79009d6, type: 3}
+  - {fileID: -68091518, guid: 915c63ef4a070aa4e93303e37fe2e6f3, type: 3}
+  - {fileID: 1564307821, guid: 90d3ee6f85c850641a4fdccbec3f71ba, type: 3}
+  - {fileID: 2103642331, guid: ef17dce975beace45ab83c734c3744b0, type: 3}
+  - {fileID: -552672519, guid: 80245cd3bf5b85043985dc40e9cadaff, type: 3}
+  - {fileID: 800152674, guid: c6983207fc222f044bc0ece74f384e26, type: 3}
+  - {fileID: 224136404, guid: 6797e2d8cdbe94b4d89e7c441c254376, type: 3}
+  - {fileID: 1016551284, guid: 209719d8ae33a2047b42778f02662a08, type: 3}
+  - {fileID: 162424948, guid: 1aaea51a10299fd4992fc9a9cabc928e, type: 3}
+  - {fileID: 1197592841, guid: f198f2fb20ef3084ea9bc657cbf9e018, type: 3}
+  - {fileID: 898624418, guid: 26e56af312623084ea957446f5053187, type: 3}
+  - {fileID: -1847029779, guid: 3cfa4cea29d614549adf38ca0c691b58, type: 3}
+  - {fileID: 915104761, guid: b17c5cc8b74b7fe46acc7fd9d08e3658, type: 3}
+  - {fileID: -1466577857, guid: cb7c417756f301b4ba7455bcaa7b7521, type: 3}
+  - {fileID: 1511538162, guid: b184b484efa0cc442914a081dc2eaec8, type: 3}
 --- !u!4 &1470468449744622285
 Transform:
   m_ObjectHideFlags: 0
@@ -7620,6 +7761,7 @@ GameObject:
   - component: {fileID: 7363035425630081170}
   - component: {fileID: 7363035425630081133}
   - component: {fileID: 7363035425630081135}
+  - component: {fileID: 7363035425630081171}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7650,6 +7792,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7363035425630081171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363035425630081134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099f4b1749cf319469dade71da3ae787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7434850448618390796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7711,9 +7865,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808ddd6f7ec116418051f61e7e08883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualSprite: {fileID: 0}
+  actualSprite: {fileID: 898624418, guid: 26e56af312623084ea957446f5053187, type: 3}
   actualNumber: 0
-  type: rightWing
+  planeName: RightWing
+  spritesToDisplay:
+  - {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
+  - {fileID: 1954972081, guid: 1613c2578ca519b458a3b6abc36a2797, type: 3}
+  - {fileID: -929278411, guid: 1d9fa5947470c664280880234a41a504, type: 3}
+  - {fileID: 1807998079, guid: 0ce3b8c38e594b4458ac703d43bb997b, type: 3}
+  - {fileID: 2064430010, guid: 5fb4053c1a19e4a4dac4752e88591e49, type: 3}
+  - {fileID: -1822181230, guid: 6494781d39aca024bb9517a9b79009d6, type: 3}
+  - {fileID: -68091518, guid: 915c63ef4a070aa4e93303e37fe2e6f3, type: 3}
+  - {fileID: 1564307821, guid: 90d3ee6f85c850641a4fdccbec3f71ba, type: 3}
+  - {fileID: 2103642331, guid: ef17dce975beace45ab83c734c3744b0, type: 3}
+  - {fileID: -552672519, guid: 80245cd3bf5b85043985dc40e9cadaff, type: 3}
+  - {fileID: 800152674, guid: c6983207fc222f044bc0ece74f384e26, type: 3}
+  - {fileID: 224136404, guid: 6797e2d8cdbe94b4d89e7c441c254376, type: 3}
+  - {fileID: 1016551284, guid: 209719d8ae33a2047b42778f02662a08, type: 3}
+  - {fileID: 162424948, guid: 1aaea51a10299fd4992fc9a9cabc928e, type: 3}
+  - {fileID: 1197592841, guid: f198f2fb20ef3084ea9bc657cbf9e018, type: 3}
+  - {fileID: 898624418, guid: 26e56af312623084ea957446f5053187, type: 3}
+  - {fileID: -1847029779, guid: 3cfa4cea29d614549adf38ca0c691b58, type: 3}
+  - {fileID: 915104761, guid: b17c5cc8b74b7fe46acc7fd9d08e3658, type: 3}
+  - {fileID: -1466577857, guid: cb7c417756f301b4ba7455bcaa7b7521, type: 3}
+  - {fileID: 1511538162, guid: b184b484efa0cc442914a081dc2eaec8, type: 3}
 --- !u!212 &7611785905278634379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7845,9 +8020,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808ddd6f7ec116418051f61e7e08883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualSprite: {fileID: 0}
+  actualSprite: {fileID: 800152674, guid: c6983207fc222f044bc0ece74f384e26, type: 3}
   actualNumber: 0
-  type: body
+  planeName: PlanesBody
+  spritesToDisplay:
+  - {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
+  - {fileID: 1954972081, guid: 1613c2578ca519b458a3b6abc36a2797, type: 3}
+  - {fileID: -929278411, guid: 1d9fa5947470c664280880234a41a504, type: 3}
+  - {fileID: 1807998079, guid: 0ce3b8c38e594b4458ac703d43bb997b, type: 3}
+  - {fileID: 2064430010, guid: 5fb4053c1a19e4a4dac4752e88591e49, type: 3}
+  - {fileID: -1822181230, guid: 6494781d39aca024bb9517a9b79009d6, type: 3}
+  - {fileID: -68091518, guid: 915c63ef4a070aa4e93303e37fe2e6f3, type: 3}
+  - {fileID: 1564307821, guid: 90d3ee6f85c850641a4fdccbec3f71ba, type: 3}
+  - {fileID: 2103642331, guid: ef17dce975beace45ab83c734c3744b0, type: 3}
+  - {fileID: -552672519, guid: 80245cd3bf5b85043985dc40e9cadaff, type: 3}
+  - {fileID: 800152674, guid: c6983207fc222f044bc0ece74f384e26, type: 3}
+  - {fileID: 224136404, guid: 6797e2d8cdbe94b4d89e7c441c254376, type: 3}
+  - {fileID: 1016551284, guid: 209719d8ae33a2047b42778f02662a08, type: 3}
+  - {fileID: 162424948, guid: 1aaea51a10299fd4992fc9a9cabc928e, type: 3}
+  - {fileID: 1197592841, guid: f198f2fb20ef3084ea9bc657cbf9e018, type: 3}
+  - {fileID: 898624418, guid: 26e56af312623084ea957446f5053187, type: 3}
+  - {fileID: -1847029779, guid: 3cfa4cea29d614549adf38ca0c691b58, type: 3}
+  - {fileID: 915104761, guid: b17c5cc8b74b7fe46acc7fd9d08e3658, type: 3}
+  - {fileID: -1466577857, guid: cb7c417756f301b4ba7455bcaa7b7521, type: 3}
+  - {fileID: 1511538162, guid: b184b484efa0cc442914a081dc2eaec8, type: 3}
 --- !u!212 &7611785905924083039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8015,9 +8211,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7808ddd6f7ec116418051f61e7e08883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualSprite: {fileID: 0}
+  actualSprite: {fileID: -1822181230, guid: 6494781d39aca024bb9517a9b79009d6, type: 3}
   actualNumber: 0
-  type: leftWing
+  planeName: LeftWing
+  spritesToDisplay:
+  - {fileID: 407319809, guid: d30704593d87b0a4e844d568004dcca4, type: 3}
+  - {fileID: 1954972081, guid: 1613c2578ca519b458a3b6abc36a2797, type: 3}
+  - {fileID: -929278411, guid: 1d9fa5947470c664280880234a41a504, type: 3}
+  - {fileID: 1807998079, guid: 0ce3b8c38e594b4458ac703d43bb997b, type: 3}
+  - {fileID: 2064430010, guid: 5fb4053c1a19e4a4dac4752e88591e49, type: 3}
+  - {fileID: -1822181230, guid: 6494781d39aca024bb9517a9b79009d6, type: 3}
+  - {fileID: -68091518, guid: 915c63ef4a070aa4e93303e37fe2e6f3, type: 3}
+  - {fileID: 1564307821, guid: 90d3ee6f85c850641a4fdccbec3f71ba, type: 3}
+  - {fileID: 2103642331, guid: ef17dce975beace45ab83c734c3744b0, type: 3}
+  - {fileID: -552672519, guid: 80245cd3bf5b85043985dc40e9cadaff, type: 3}
+  - {fileID: 800152674, guid: c6983207fc222f044bc0ece74f384e26, type: 3}
+  - {fileID: 224136404, guid: 6797e2d8cdbe94b4d89e7c441c254376, type: 3}
+  - {fileID: 1016551284, guid: 209719d8ae33a2047b42778f02662a08, type: 3}
+  - {fileID: 162424948, guid: 1aaea51a10299fd4992fc9a9cabc928e, type: 3}
+  - {fileID: 1197592841, guid: f198f2fb20ef3084ea9bc657cbf9e018, type: 3}
+  - {fileID: 898624418, guid: 26e56af312623084ea957446f5053187, type: 3}
+  - {fileID: -1847029779, guid: 3cfa4cea29d614549adf38ca0c691b58, type: 3}
+  - {fileID: 915104761, guid: b17c5cc8b74b7fe46acc7fd9d08e3658, type: 3}
+  - {fileID: -1466577857, guid: cb7c417756f301b4ba7455bcaa7b7521, type: 3}
+  - {fileID: 1511538162, guid: b184b484efa0cc442914a081dc2eaec8, type: 3}
 --- !u!1 &7611785905974123642
 GameObject:
   m_ObjectHideFlags: 0

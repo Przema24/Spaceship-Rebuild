@@ -339,6 +339,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342747001565082194, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
+      propertyPath: planeElements.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4342747001565082195, guid: 39097807f3c3b0d418507bf76754c236, type: 3}
       propertyPath: m_RootOrder
       value: 1
